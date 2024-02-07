@@ -3,8 +3,6 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-
     --  format with conform
     ["<leader>fm"] = {
       function()
@@ -29,6 +27,22 @@ M.dap = {
     ["<leader>dr"] = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
+    }
+  }
+}
+M.lazygit = {
+  n = {
+    ["<leader>gl"] = {
+      "<cmd> LazyGit <CR>",
+      "LazyGit"
+    },
+    ["<leader>gf"] = {
+      "<cmd> LazyGitCurrentFile <CR>",
+      "LazyGit current file"
+    },
+    ["<leader>gc"] = {
+      "<cmd> LazyGitFilter <CR>",
+      "LazyGit commits"
     }
   }
 }
