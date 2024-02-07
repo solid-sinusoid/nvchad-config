@@ -6,7 +6,8 @@ local options = {
 		lua = { "stylua" },
 		sh = { "shfmt" },
     cpp = {"clang-format"},
-    xml = {"xmlformatter"}
+    xml = {"xmlformatter"},
+    cmake = {"cmakelang"}
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some

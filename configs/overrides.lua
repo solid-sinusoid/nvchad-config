@@ -11,6 +11,7 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "xml",
+    "cmake"
   },
   indent = {
     enable = true,
@@ -34,6 +35,9 @@ M.mason = {
     -- xml
     "lemminx",
     "xmlformatter",
+    -- cmake
+    "cmake-language-server",
+    "cmakelang"
   },
 }
 
