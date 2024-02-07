@@ -3,6 +3,18 @@ local M = {}
 
 M.general = {
   n = {
+    ["\\"] = {
+      "<cmd> vsplit <CR>",
+      "Vertical Split",
+    },
+    ["-"] = {
+      "<cmd> split <CR>",
+      "Horizontal Split",
+    },
+    ["<leader>q"] = {
+      "<cmd>q<CR>",
+      "Close window",
+    },
     --  format with conform
     ["<leader>fm"] = {
       function()
@@ -46,52 +58,22 @@ M.lazygit = {
   },
 }
 
-M.nvimtree = {
+M.scissors = {
   n = {
-    ["l"] = {
+    ["<leader>se"] = {
       function()
-        local api = require "nvim-tree.api"
-        local function edit_or_open()
-          local node = api.tree.get_node_under_cursor()
-          if node.nodes ~= nil then
-            api.node.open.edit()
-          else
-            api.node.open.edit()
-            api.tree.close()
-          end
-        end
-        edit_or_open()
+        require("scissors").editSnippet()
       end,
-      "Edit Or Open",
+      "Edit snippet",
     },
-    ["L"] = {
+    ["<leader>sa"] = {
       function()
-        local api = require "nvim-tree.api"
-        local function vsplit_preview()
-          local node = api.tree.get_node_under_cursor()
-          if node.nodes ~= nil then
-            api.node.open.edit()
-          else
-            api.node.open.vertical()
-          end
-          api.tree.focus()
-        end
-        vsplit_preview()
+        require("scissors").addNewSnippet()
       end,
-    },
-    ["h"] = {
-      function()
-        require("nvim-tree.api").tree.close()
-      end
-    },
-    ["H"] = {
-      function()
-        require("nvim-tree.api").tree.collapse_all()
-      end
+      "Add new snippet"
     }
   },
 }
-
 -- more keybinds!
 
 return M

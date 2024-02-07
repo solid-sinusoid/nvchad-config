@@ -54,11 +54,6 @@ local plugins = {
         require("lazy").load { plugins = { "dressing.nvim" } }
         return vim.ui.select(...)
       end
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.input = function(...)
-        require("lazy").load { plugins = { "dressing.nvim" } }
-        return vim.ui.input(...)
-      end
     end,
   },
   {
@@ -66,18 +61,7 @@ local plugins = {
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
     config = function()
-      local dap = require "dap"
-      local dapui = require "dapui"
-      dapui.setup()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
+      require "custom.configs.nvim-dap-ui"
     end,
   },
   {
@@ -87,9 +71,7 @@ local plugins = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",
     },
-    opts = {
-      handlers = {},
-    },
+    opts = {},
   },
   {
     "mfussenegger/nvim-dap",
@@ -105,13 +87,7 @@ local plugins = {
     event = "VeryLazy",
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      highlight = {
-        exclude = {
-          "log",
-        },
-      },
-    },
+    opts = overrides.todocomments,
   },
   {
     "jackMort/ChatGPT.nvim",
@@ -141,19 +117,12 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  {
+    "chrisgrieser/nvim-scissors",
+    event = "VeryLazy",
+    dependencies = "nvim-telescope/telescope.nvim", -- optional
+    opts = overrides.scissor,
+  },
 }
 
 return plugins

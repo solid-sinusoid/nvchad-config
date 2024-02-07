@@ -10,7 +10,7 @@ M.treesitter = {
     "dockerfile",
     "markdown",
     "markdown_inline",
-    "xml"
+    "xml",
   },
   indent = {
     enable = true,
@@ -25,7 +25,7 @@ M.mason = {
     -- lua stuff
     "lua-language-server",
     "stylua",
-    -- python 
+    -- python
     "pyright",
     "debugpy",
     -- c/cpp stuff
@@ -33,7 +33,7 @@ M.mason = {
     "clang-format",
     -- xml
     "lemminx",
-    "xmlformatter"
+    "xmlformatter",
   },
 }
 
@@ -51,6 +51,19 @@ M.nvimtree = {
       },
     },
   },
+}
+
+M.todocomments = {
+  highlight = {
+    exclude = {
+      "log",
+    },
+  },
+}
+
+local snippets_dir = "/home/bill-finger/.config/nvim/lua/user/snippets"
+M.scissor = {
+ snippetDir = snippets_dir,
 }
 
 return M
