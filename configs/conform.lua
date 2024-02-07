@@ -5,7 +5,8 @@ local options = {
 	formatters_by_ft = {
 		lua = { "stylua" },
 		sh = { "shfmt" },
-    cpp = {"clang-format"}
+    cpp = {"clang-format"},
+    xml = {"xmlformatter"}
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some
