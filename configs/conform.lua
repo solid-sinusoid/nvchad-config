@@ -7,7 +7,10 @@ local options = {
 		sh = { "shfmt" },
     cpp = {"clang-format"},
     xml = {"xmlformatter"},
-    cmake = {"cmakelang"}
+    cmake = {"cmakelang"},
+    yaml = {"prettier"},
+    json = {"biome"},
+    python = {"pyment"}
 	},
 
   -- adding same formatter for multiple filetypes can look too much work for some

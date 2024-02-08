@@ -32,12 +32,18 @@ M.mason = {
     -- c/cpp stuff
     "clangd",
     "clang-format",
+    "cpptools",
     -- xml
     "lemminx",
     "xmlformatter",
     -- cmake
     "cmake-language-server",
-    "cmakelang"
+    "cmakelang",
+    -- yaml
+    "yaml-language-server",
+    "prettier",
+    -- json
+    "biome",
   },
 }
 
@@ -65,7 +71,7 @@ M.todocomments = {
   },
 }
 
-local snippets_dir = "/home/bill-finger/.config/nvim/lua/user/snippets"
+local snippets_dir = "/home/bill-finger/.config/nvim/lua/custom/snippets"
 M.scissor = {
  snippetDir = snippets_dir,
 }

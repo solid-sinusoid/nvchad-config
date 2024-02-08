@@ -1,0 +1,1 @@
+{"contributes":{"snippets":[{"language":"xacro","path":".\/xacro.json"},{"language":["lua"],"path":".\/lua.json"},{"language":["xml"],"path":".\/xml.json"}]},"name":"user snippets","engines":{"vscode":"^1.11.0"}}
