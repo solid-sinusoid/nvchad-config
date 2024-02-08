@@ -71,9 +71,9 @@ M.todocomments = {
   },
 }
 
-local snippets_dir = "/home/bill-finger/.config/nvim/lua/custom/snippets"
+local path = vim.fn.stdpath "config" .. "/lua/custom/snippets/"
 M.scissor = {
- snippetDir = snippets_dir,
+ snippetDir = path,
 }
 
 return M
