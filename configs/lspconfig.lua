@@ -4,7 +4,13 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "pyright", "clangd" }
+local servers = {
+  "pyright",
+  "clangd",
+  "lemminx",
+  -- "cmake-language-server",
+  -- "yaml-language-server"
+}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -13,7 +19,7 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
+--
 -- lspconfig.pyright.setup { blabla}
 -- lspconfig.clangd.setup {
 --   on_attach = function(client, bufnr)

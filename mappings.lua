@@ -22,6 +22,12 @@ M.general = {
       end,
       "formatting",
     },
+    ["<leader>frm"] = {
+      function()
+        vim.lsp.buf.format()
+      end,
+      "default formatting",
+    },
   },
   v = {
     [">"] = { ">gv", "indent" },
@@ -70,8 +76,8 @@ M.scissors = {
       function()
         require("scissors").addNewSnippet()
       end,
-      "Add new snippet"
-    }
+      "Add new snippet",
+    },
   },
 }
 -- more keybinds!
