@@ -89,11 +89,11 @@ M.scissors = {
 
 M.overseer = {
   n = {
-    ["<leader>Ou"] = {
+    ["<leader>tu"] = {
       "<cmd> OverseerToggle <CR>",
       "Toggle Overseer UI",
     },
-    ["<leader>Or"] = {
+    ["<leader>tr"] = {
       "<cmd> OverseerRun <CR>",
       "Run Task",
     },
