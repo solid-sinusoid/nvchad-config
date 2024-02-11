@@ -45,6 +45,12 @@ M.dap = {
       "<cmd> DapContinue <CR>",
       "Start or continue the debugger",
     },
+    ["<leader>du"] = {
+      function()
+        require("dapui").toggle()
+      end,
+      "Toggle DapUI",
+    },
   },
 }
 M.lazygit = {
@@ -80,6 +86,17 @@ M.scissors = {
     },
   },
 }
--- more keybinds!
 
+M.overseer = {
+  n = {
+    ["<leader>Ou"] = {
+      "<cmd> OverseerToggle <CR>",
+      "Toggle Overseer UI",
+    },
+    ["<leader>Or"] = {
+      "<cmd> OverseerRun <CR>",
+      "Run Task",
+    },
+  },
+}
 return M

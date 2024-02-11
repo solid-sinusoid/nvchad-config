@@ -57,6 +57,17 @@ local plugins = {
     end,
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {},
+    },
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
     dependencies = "mfussenegger/nvim-dap",
@@ -65,18 +76,10 @@ local plugins = {
     end,
   },
   {
-    "jay-babu/mason-nvim-dap.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "williamboman/mason.nvim",
-      "mfussenegger/nvim-dap",
-    },
-    opts = {},
-  },
-  {
     "mfussenegger/nvim-dap",
     config = function(_, _)
       require("core.utils").load_mappings "dap"
+      require "custom.configs.dap"
     end,
   },
   {
@@ -102,12 +105,6 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
-  },
-  {
-    "ldelossa/nvim-dap-projects",
-    config = function()
-      require("nvim-dap-projects").search_project_config()
-    end,
   },
   {
     "kdheepak/lazygit.nvim",
@@ -141,6 +138,18 @@ local plugins = {
     opts = {
       -- Your setup opts here
     },
+  },
+  {
+    "stevearc/overseer.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("overseer").setup {
+        task_list = {
+          direction = "bottom",
+        },
+      }
+    end,
+    opts = {},
   },
 }
 

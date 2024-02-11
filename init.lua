@@ -9,7 +9,7 @@ autocmd("TextYankPost", {
 })
 
 vim.opt.relativenumber = true
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 vim.filetype.add {
   extension = {
     xacro = "xml",
