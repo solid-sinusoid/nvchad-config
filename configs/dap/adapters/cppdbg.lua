@@ -19,6 +19,44 @@ M.config = {
     stopOnEntry = false,
   },
   {
+    name = "(cppdbg) Attach file",
+    type = "cppdbg",
+    request = "attach",
+    MiMode = "gdb",
+    processId = "${command:pickProcess}",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    end,
+    -- cwd = "${workspaceFolder}",
+    -- stopOnEntry = false,
+    setupCommands = {
+      {
+        text = "-enable-pretty-printing",
+        description = "enable pretty printing",
+        ignoreFailures = false,
+      },
+    },
+  },
+  {
+    name = "(cppdbg) Attach file :1234",
+    type = "cppdbg",
+    request = "launch",
+    MIMode = "gdb",
+    miDebuggerServerAddress = "localhost:1234",
+    miDebuggerPath = "/usr/bin/gdb",
+    program = function()
+      return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+    end,
+    cwd = "${workspaceFolder}",
+    setupCommands = {
+      {
+        text = "-enable-pretty-printing",
+        description = "enable pretty printing",
+        ignoreFailures = false,
+      },
+    },
+  },
+  {
     name = "(cppdbg) Launch ROS Node",
     type = "cppdbg",
     request = "launch",
@@ -60,6 +98,5 @@ M.config = {
     waitFor = true,
   },
 }
-
 
 return M

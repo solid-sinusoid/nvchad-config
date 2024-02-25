@@ -7,9 +7,16 @@ autocmd("TextYankPost", {
   pattern = "*",
   callback = function() vim.highlight.on_yank() end,
 })
-
+--
+autocmd('BufRead', {
+  pattern = {'*.*'},
+  callback = function(data)
+    require('local-highlight').attach(data.buf)
+  end
+})
+--
 vim.opt.relativenumber = true
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
 vim.filetype.add {
   extension = {
     xacro = "xml",

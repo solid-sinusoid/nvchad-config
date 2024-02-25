@@ -78,6 +78,7 @@ local plugins = {
   {
     "mfussenegger/nvim-dap",
     config = function(_, _)
+      dofile(vim.g.base46_cache .. "dap")
       require("core.utils").load_mappings "dap"
       require "custom.configs.dap"
     end,
@@ -91,20 +92,6 @@ local plugins = {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = overrides.todocomments,
-  },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup {
-        api_key_cmd = "pass show chatgpt.apikey",
-      }
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-    },
   },
   {
     "kdheepak/lazygit.nvim",
@@ -123,21 +110,12 @@ local plugins = {
   {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      hint_enable = false,
+    },
     config = function(_, opts)
       require("lsp_signature").setup(opts)
     end,
-  },
-  {
-    "hedyhli/outline.nvim",
-    lazy = true,
-    cmd = { "Outline", "OutlineOpen" },
-    keys = { -- Example mapping to toggle outline
-      { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle outline" },
-    },
-    opts = {
-      -- Your setup opts here
-    },
   },
   {
     "stevearc/overseer.nvim",
@@ -150,6 +128,116 @@ local plugins = {
       }
     end,
     opts = {},
+  },
+  {
+    "folke/trouble.nvim",
+    event = "VeryLazy",
+    cmd = "Trouble",
+    config = function()
+      dofile(vim.g.base46_cache .. "trouble")
+      require("trouble").setup()
+    end,
+  },
+  {
+    "tzachar/local-highlight.nvim",
+    config = function()
+      require("local-highlight").setup()
+    end,
+  },
+  {
+    "nvimdev/lspsaga.nvim",
+    event = "LspAttach",
+    config = function()
+      dofile(vim.g.base46_cache .. "lspsaga")
+      require("lspsaga").setup {}
+    end,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter", -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
+    },
+  }, --
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "VeryLazy",
+    config = function()
+      dofile(vim.g.base46_cache .. "rainbowdelimiters")
+      require("rainbow-delimiters.setup").setup {}
+    end,
+  },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
+    init = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    config = function()
+      require("nvim-dap-virtual-text").setup()
+    end,
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    event = "VeryLazy",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
+  -- lazy.nvim
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      "rcarriga/nvim-notify",
+    },
+    config = function()
+      require("noice").setup {
+        lsp = {
+          -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+          override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+          },
+          signature = {
+            enabled = false,
+          },
+          hover = {
+            enabled = false,
+          },
+        },
+        -- you can enable a preset for easier configuration
+        presets = {
+          bottom_search = true, -- use a classic bottom cmdline for search
+          command_palette = true, -- position the cmdline and popupmenu together
+          long_message_to_split = true, -- long messages will be sent to a split
+          inc_rename = false, -- enables an input dialog for inc-rename.nvim
+          lsp_doc_border = false, -- add a border to hover docs and signature help
+          signature = false,
+        },
+      }
+    end,
   },
 }
 

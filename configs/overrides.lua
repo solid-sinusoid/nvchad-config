@@ -11,7 +11,8 @@ M.treesitter = {
     "markdown",
     "markdown_inline",
     "xml",
-    "cmake"
+    "cmake",
+    "json",
   },
   indent = {
     enable = true,
@@ -44,6 +45,7 @@ M.mason = {
     "prettier",
     -- json
     "biome",
+    "jsom-lsp",
   },
 }
 
@@ -73,7 +75,7 @@ M.todocomments = {
 
 local path = vim.fn.stdpath "config" .. "/lua/custom/snippets/"
 M.scissor = {
- snippetDir = path,
+  snippetDir = path,
 }
 
 return M

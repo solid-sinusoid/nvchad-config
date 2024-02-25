@@ -28,6 +28,24 @@ M.general = {
       end,
       "default formatting",
     },
+    ["<C-Left>"] = {
+      "<cmd>vertical resize +5<CR>",
+      "Resize Window Left",
+    },
+    ["<C-Right>"] = {
+      "<cmd>vertical resize -5<CR>",
+      "Resize Window Right",
+    },
+    ["<C-Up>"] = {
+      "<cmd>horizontal resize +5<CR>",
+      "Resize Window Up",
+    },
+    ["<C-Down>"] = {
+      "<cmd> horizontal resize -5<CR>",
+      "Resize Window Down",
+    },
+    ["<C-D>"] = { "<C-D>zz" },
+    ["<C-U>"] = { "<C-U>zz" },
   },
   v = {
     [">"] = { ">gv", "indent" },
@@ -96,6 +114,46 @@ M.overseer = {
     ["<leader>tr"] = {
       "<cmd> OverseerRun <CR>",
       "Run Task",
+    },
+  },
+}
+
+M.lspsaga = {
+  n = {
+    ["<leader>o"] = {
+      "<cmd> Lspsaga outline <CR>",
+      "Toggle Outline Current Code",
+    },
+    ["<leader>cf"] = {
+      "<cmd> Lspsaga finder <CR>",
+      "Find word under cursor",
+    },
+    ["<leader>lr"] = {
+      "<cmd> Lspsaga rename <CR>",
+      "Rename variable LSP",
+    },
+    ["K"] = {
+      "<cmd> Lspsaga hover_doc <CR>",
+      "Hower Doc",
+    },
+    ["gd"] = {
+      "<cmd> Lspsaga goto_definition <CR>",
+      "Goto Definition",
+    },
+    ["gtd"] = {
+      "<cmd> Lspsaga goto_type_definition <CR>",
+      "Goto Type Definition",
+    },
+  },
+}
+
+M.spectre = {
+  n = {
+    ["<leader>S"] = {
+      function()
+        require("spectre").toggle()
+      end,
+      "Toggle Find and Replace menu",
     },
   },
 }

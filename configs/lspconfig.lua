@@ -8,6 +8,7 @@ local servers = {
   "pyright",
   "clangd",
   "lemminx",
+  "biome",
   -- "cmake-language-server",
   -- "yaml-language-server"
 }
@@ -18,6 +19,14 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+-- jsonls
+local jscapabilities = vim.lsp.protocol.make_client_capabilities()
+jscapabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lspconfig.jsonls.setup{
+  capabilities = jscapabilities
+}
 
 --
 -- lspconfig.pyright.setup { blabla}

@@ -13,7 +13,7 @@ M.ui = {
 }
 
 M.plugins = "custom.plugins"
-
+M.ui.extended_integrations = {"trouble", "alpha", "dap", "lspsaga", "rainbowdelimiters"}
 -- check core.mappings for table structure
 M.mappings = require "custom.mappings"
 

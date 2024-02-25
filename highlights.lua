@@ -9,6 +9,9 @@ M.override = {
   Comment = {
     italic = true,
   },
+  IndentBlanklineContextStart = {
+    bg = "NONE"
+  }
 }
 
 ---@type HLTable
