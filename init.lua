@@ -21,6 +21,7 @@ vim.filetype.add {
   extension = {
     xacro = "xml",
     urdf = "xml",
+    repos = "yaml"
   },
 }
 require "custom.configs.dap-highlights"
