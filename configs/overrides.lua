@@ -45,7 +45,7 @@ M.mason = {
     "prettier",
     -- json
     "biome",
-    "jsom-lsp",
+    "json-lsp",
   },
 }
 
