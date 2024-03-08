@@ -55,9 +55,16 @@ M.nvimtree = {
     enable = true,
   },
 
+  filters = {
+    custom = {
+      "^.git$",
+    },
+  },
+
   renderer = {
     highlight_git = true,
     icons = {
+    git_placement = "signcolumn",
       show = {
         git = true,
       },
