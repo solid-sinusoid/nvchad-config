@@ -70,7 +70,7 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
     config = function()
       require "custom.configs.nvim-dap-ui"
     end,
@@ -81,6 +81,16 @@ local plugins = {
       dofile(vim.g.base46_cache .. "dap")
       require("core.utils").load_mappings "dap"
       require "custom.configs.dap"
+    end,
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = "mfussenegger/nvim-dap",
+    opts = {},
+    config = function(_, opts)
+      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      require("dap-python").setup(path)
     end,
   },
   {

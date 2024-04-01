@@ -13,6 +13,7 @@ M.treesitter = {
     "xml",
     "cmake",
     "json",
+    "toml",
   },
   indent = {
     enable = true,

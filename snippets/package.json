@@ -1,1 +1,1 @@
-{"contributes":{"snippets":[{"language":"xacro","path":".\/xacro.json"},{"language":["lua"],"path":".\/lua.json"},{"language":["xml"],"path":".\/xml.json"}]},"name":"user snippets","engines":{"vscode":"^1.11.0"}}
+{"name":"user snippets","engines":{"vscode":"^1.11.0"},"contributes":{"snippets":[{"path":".\/xacro.json","language":"xacro"},{"path":".\/lua.json","language":["lua"]},{"path":".\/xml.json","language":["xml"]},{"path":".\/python.json","language":["python"]}]}}

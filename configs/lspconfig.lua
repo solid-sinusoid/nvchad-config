@@ -9,7 +9,7 @@ local servers = {
   "clangd",
   "lemminx",
   "biome",
-  -- "cmake-language-server",
+  "neocmake",
   -- "yaml-language-server"
 }
 

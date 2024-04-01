@@ -9,7 +9,11 @@ M.override = {
   },
   IndentBlanklineContextStart = {
     bg = "NONE"
+  },
+  treesitter = {
+
   }
+
 }
 
 ---@type HLTable
