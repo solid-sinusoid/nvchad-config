@@ -89,7 +89,7 @@ local plugins = {
     dependencies = "mfussenegger/nvim-dap",
     opts = {},
     config = function(_, opts)
-      local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+      local path = "/usr/bin/python"
       require("dap-python").setup(path)
     end,
   },
