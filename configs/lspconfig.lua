@@ -29,6 +29,17 @@ lspconfig.jsonls.setup{
   capabilities = jscapabilities
 }
 
+lspconfig.basedpyright.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    basedpyright = {
+      typeCheckingMode = "off"
+    }
+  }
+}
+
+
 --
 -- lspconfig.pyright.setup { blabla}
 -- lspconfig.clangd.setup {
