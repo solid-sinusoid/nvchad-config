@@ -91,6 +91,14 @@ local plugins = {
     config = function(_, opts)
       local path = "/usr/bin/python"
       require("dap-python").setup(path)
+      table.insert(require("dap").configurations.python, {
+        justMyCode = false,
+        type = "python",
+        request = "launch",
+        name = "Python Launch File jmc=False",
+        program = "${file}",
+        pythonPath = path
+      })
     end,
   },
   {

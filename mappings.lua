@@ -69,6 +69,16 @@ M.dap = {
       end,
       "Toggle DapUI",
     },
+    ["<leader>di"] = {
+      function()
+        require("dapui").eval()
+      end,
+    },
+    ["<leader>df"] = {
+      function()
+        require("dapui").float_element()
+      end,
+    }
   },
 }
 M.lazygit = {
