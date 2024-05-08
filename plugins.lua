@@ -272,6 +272,9 @@ local plugins = {
       -- treesitter = true,
     },
   },
+  {"sindrets/diffview.nvim",
+    event = "VeryLazy"
+  },
 }
 
 return plugins
