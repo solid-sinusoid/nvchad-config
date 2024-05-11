@@ -14,6 +14,7 @@ M.treesitter = {
     "cmake",
     "json",
     "toml",
+    "rust"
   },
   indent = {
     enable = true,
@@ -29,7 +30,7 @@ M.mason = {
     "lua-language-server",
     "stylua",
     -- python
-    "pyright",
+    "basedpyright",
     "debugpy",
     -- c/cpp stuff
     "clangd",
@@ -43,10 +44,16 @@ M.mason = {
     "cmakelang",
     -- yaml
     "yaml-language-server",
-    "prettier",
+    "prettier", -- Formatter
     -- json
-    "biome",
-    "json-lsp",
+    "biome", -- Linter
+    "jq", -- Formatter
+    "json-lsp", -- LSP
+    -- docker
+    "dockerfile-language-server",
+    "docker-compose-language-server",
+    -- Rust
+    "rust-analyzer",
   },
 }
 

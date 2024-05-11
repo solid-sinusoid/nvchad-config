@@ -1,8 +1,9 @@
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
-local lspconfig = require "lspconfig"
-local util = require 'lspconfig.util'
+local lspconfig = require("lspconfig")
+local util = require('lspconfig.util')
+local config = require("lspconfig.configs")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
@@ -10,7 +11,7 @@ local servers = {
   "clangd",
   "lemminx",
   "biome",
-  "neocmake",
+  -- "neocmake",
   -- "yaml-language-server"
 }
 
@@ -39,6 +40,26 @@ lspconfig.basedpyright.setup{
   }
 }
 
+if not config.neocmake then
+  config.neocmake = {
+    default_config = {
+      cmd = {"neocmakelsp", "--stdio"},
+      filetypes = {"cmake"},
+      root_dir = function (fname)
+        return util.find_git_ancestor(fname)
+      end,
+      single_file_support = true,
+      on_attach = on_attach,
+      init_options = {
+        format = {
+          enable = true
+        },
+        scan_cmake_in_package = true
+      }
+    }
+  }
+  lspconfig.neocmake.setup({})
+end
 
 --
 -- lspconfig.pyright.setup { blabla}
