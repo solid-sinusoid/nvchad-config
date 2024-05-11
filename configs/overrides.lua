@@ -51,7 +51,7 @@ M.mason = {
     "json-lsp", -- LSP
     -- docker
     "dockerfile-language-server",
-    "docker-compose-language-server",
+    "docker-compose-language-service",
     -- Rust
     "rust-analyzer",
   },
