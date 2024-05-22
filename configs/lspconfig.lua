@@ -11,6 +11,7 @@ local servers = {
   "clangd",
   "lemminx",
   "biome",
+  "dockerls"
   -- "neocmake",
   -- "yaml-language-server"
 }
