@@ -1,0 +1,1 @@
+{"def init class method":{"prefix":"def init class method","body":["    def __init__(self, ${:0}):","        ${:1}"]}}
