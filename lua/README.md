@@ -1,3 +1,8 @@
-# Example_config
+# Installation
 
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+```bash
+git clone https://github.com/solid-sinusoid/nvchad-config.git ~/.config/nvim && nvim
+```
+
+After this run `:MasonInstallAll` to install LSP, DAP and etc.
+

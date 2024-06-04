@@ -68,6 +68,8 @@ map("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", { desc = "LSPSaga Rename" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSPSaga Hover Doc" })
 map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "LSPSaga Goto Definition" })
 map("n", "gtd", "<cmd>Lspsaga goto_type_definition<CR>", { desc = "LSPSaga Goto Type Definition" })
+map("n", "<leader>lf", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "LSPSaga Show Line Diagnostics" })
+
 
 -- Spectre mappings
 map("n", "<leader>S", function()

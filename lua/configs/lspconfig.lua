@@ -36,7 +36,7 @@ lspconfig.basedpyright.setup{
   on_attach = on_attach,
   settings = {
     basedpyright = {
-      typeCheckingMode = "off"
+      typeCheckingMode = "standart"
     }
   }
 }
