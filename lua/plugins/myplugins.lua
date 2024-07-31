@@ -126,12 +126,12 @@ local plugins = {
       "nvim-lua/plenary.nvim",
     },
   },
-  -- {
-  --   "chrisgrieser/nvim-scissors",
-  --   event = "VeryLazy",
-  --   dependencies = "nvim-telescope/telescope.nvim", -- optional
-  --   opts = overrides.scissor,
-  -- },
+  {
+    "chrisgrieser/nvim-scissors",
+    event = "VeryLazy",
+    dependencies = "nvim-telescope/telescope.nvim", -- optional
+    opts = overrides.scissor,
+  },
   {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",

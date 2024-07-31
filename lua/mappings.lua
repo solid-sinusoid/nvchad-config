@@ -49,13 +49,13 @@ map("n", "<leader>gf", "<cmd>LazyGitCurrentFile<CR>", { desc = "LazyGit Current 
 map("n", "<leader>gc", "<cmd>LazyGitFilter<CR>", { desc = "LazyGit Commits" })
 
 -- Scissors mappings v0.10 needed
--- map("n", "<leader>se", function()
---   require("scissors").editSnippet()
--- end, { desc = "Scissors Edit Snippet" })
---
--- map("n", "<leader>sa", function()
---   require("scissors").addNewSnippet()
--- end, { desc = "Scissors Add New Snippet" })
+map("n", "<leader>se", function()
+  require("scissors").editSnippet()
+end, { desc = "Scissors Edit Snippet" })
+
+map("n", "<leader>sa", function()
+  require("scissors").addNewSnippet()
+end, { desc = "Scissors Add New Snippet" })
 
 -- Overseer mappings
 map("n", "<leader>tu", "<cmd>OverseerToggle<CR>", { desc = "Overseer Toggle UI" })
