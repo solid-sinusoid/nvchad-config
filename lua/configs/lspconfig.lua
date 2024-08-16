@@ -7,11 +7,12 @@ local config = require("lspconfig.configs")
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
-  "basedpyright",
+  -- "basedpyright",
   "clangd",
   "lemminx",
   "biome",
-  "dockerls"
+  "dockerls",
+  "taplo",
   -- "neocmake",
   -- "yaml-language-server"
 }
@@ -30,6 +31,15 @@ jscapabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.jsonls.setup{
   capabilities = jscapabilities
 }
+
+-- lspconfig.ruff.setup {
+--   init_options = {
+--     settings = {
+--       -- Any extra CLI arguments for `ruff` go here.
+--       args = {},
+--     }
+--   }
+-- }
 
 lspconfig.basedpyright.setup{
   capabilities = capabilities,
