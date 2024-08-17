@@ -87,6 +87,7 @@ local plugins = {
     "mfussenegger/nvim-dap",
     config = function(_, _)
       -- require("core.utils").load_mappings "dap"
+      -- dofile(vim.g.base46_cache .. "dap")
       require "configs.dap"
     end,
   },
@@ -159,6 +160,7 @@ local plugins = {
     event = "VeryLazy",
     cmd = "Trouble",
     config = function()
+      dofile(vim.g.base46_cache .. "trouble")
       require("trouble").setup()
     end,
   },
@@ -172,6 +174,7 @@ local plugins = {
     "nvimdev/lspsaga.nvim",
     event = "LspAttach",
     config = function()
+      -- dofile(vim.g.base46_cache .. "lspsaga")
       require("lspsaga").setup {}
     end,
     dependencies = {
@@ -183,6 +186,7 @@ local plugins = {
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",
     config = function()
+      -- dofile(vim.g.base46_cache .. "rainbowdelimiters")
       require("rainbow-delimiters.setup").setup {}
     end,
   },
