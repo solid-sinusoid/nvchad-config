@@ -24,38 +24,38 @@ M.treesitter = {
   },
 }
 
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-    -- python
-    "basedpyright",
-    "debugpy",
-    -- c/cpp stuff
-    "clangd",
-    "clang-format",
-    "cpptools",
-    -- xml
-    "lemminx",
-    "xmlformatter",
-    -- cmake
-    "cmake-language-server",
-    "cmakelang",
-    -- yaml
-    "yaml-language-server",
-    "prettier", -- Formatter
-    -- json
-    "biome", -- Linter
-    "jq", -- Formatter
-    "json-lsp", -- LSP
-    -- docker
-    "dockerfile-language-server",
-    "docker-compose-language-service",
-    -- Rust
-    "rust-analyzer",
-  },
-}
+-- M.mason = {
+--   ensure_installed = {
+--     -- lua stuff
+--     "lua-language-server",
+--     "stylua",
+--     -- python
+--     "basedpyright",
+--     "debugpy",
+--     -- c/cpp stuff
+--     "clangd",
+--     "clang-format",
+--     "cpptools",
+--     -- xml
+--     "lemminx",
+--     "xmlformatter",
+--     -- cmake
+--     "cmake-language-server",
+--     "cmakelang",
+--     -- yaml
+--     "yaml-language-server",
+--     "prettier", -- Formatter
+--     -- json
+--     "biome", -- Linter
+--     "jq", -- Formatter
+--     "json-lsp", -- LSP
+--     -- docker
+--     "dockerfile-language-server",
+--     "docker-compose-language-service",
+--     -- Rust
+--     "rust-analyzer",
+--   },
+-- }
 
 -- git support in nvimtree
 M.nvimtree = {

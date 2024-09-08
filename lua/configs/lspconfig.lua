@@ -1,9 +1,9 @@
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
-local lspconfig = require("lspconfig")
-local util = require('lspconfig.util')
-local config = require("lspconfig.configs")
+local lspconfig = require "lspconfig"
+local util = require "lspconfig.util"
+local config = require "lspconfig.configs"
 
 -- if you just want default config for the servers then put them in a table
 local servers = {
@@ -28,57 +28,54 @@ end
 local jscapabilities = vim.lsp.protocol.make_client_capabilities()
 jscapabilities.textDocument.completion.completionItem.snippetSupport = true
 
-lspconfig.jsonls.setup{
-  capabilities = jscapabilities
+lspconfig.jsonls.setup {
+  capabilities = jscapabilities,
 }
 
--- lspconfig.ruff.setup {
---   init_options = {
---     settings = {
---       -- Any extra CLI arguments for `ruff` go here.
---       args = {},
---     }
---   }
--- }
-
-lspconfig.basedpyright.setup{
+lspconfig.basedpyright.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     basedpyright = {
-      typeCheckingMode = "standart"
-    }
-  }
+      typeCheckingMode = "standart",
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        ignore = { "*" },
+      },
+    },
+  },
 }
 
 if not config.neocmake then
   config.neocmake = {
     default_config = {
-      cmd = {"neocmakelsp", "--stdio"},
-      filetypes = {"cmake"},
-      root_dir = function (fname)
+      cmd = { "neocmakelsp", "--stdio" },
+      filetypes = { "cmake" },
+      root_dir = function(fname)
         return util.find_git_ancestor(fname)
       end,
       single_file_support = true,
       on_attach = on_attach,
       init_options = {
         format = {
-          enable = true
+          enable = true,
         },
-        scan_cmake_in_package = true
-      }
-    }
+        scan_cmake_in_package = true,
+      },
+    },
   }
-  lspconfig.neocmake.setup({})
+  lspconfig.neocmake.setup {}
 end
 
---
--- lspconfig.pyright.setup { blabla}
--- lspconfig.clangd.setup {
---   on_attach = function(client, bufnr)
---     client.resolved_capabilities.document_formatting = true
---     client.server_capabilities.signatureHelpProvider = false
---     on_attach(client, bufnr)
---   end,
---   capabilities = capabilities
--- }
+local on_attache = function(client, bufnr)
+  if client.name == "ruff_lsp" then
+    -- Disable hover in favor of Pyright
+    client.server_capabilities.hoverProvider = false
+  end
+end
+
+lspconfig.ruff_lsp.setup {
+  on_attach = on_attache,
+}

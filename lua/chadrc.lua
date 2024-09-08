@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "highlights"
 
 M.base46 = {
-  theme = "kanagawa",
-  theme_toggle = { "kanagawa", "one_light" },
+  theme = "paradice",
+  theme_toggle = { "paradice", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -26,7 +26,41 @@ M.base46 = {
     "mason",
     "defaults",
     "telescope",
-    "statusline"
+    "statusline",
+  },
+}
+
+M.mason = {
+  command = true,
+  pkgs = {
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
+    -- python
+    "basedpyright",
+    "debugpy",
+    -- c/cpp stuff
+    "clangd",
+    "clang-format",
+    "cpptools",
+    -- xml
+    "lemminx",
+    "xmlformatter",
+    -- cmake
+    "cmake-language-server",
+    "cmakelang",
+    -- yaml
+    "yaml-language-server",
+    "prettier", -- Formatter
+    -- json
+    "biome", -- Linter
+    "jq", -- Formatter
+    "json-lsp", -- LSP
+    -- docker
+    "dockerfile-language-server",
+    "docker-compose-language-service",
+    -- Rust
+    "rust-analyzer",
   },
 }
 
