@@ -12,8 +12,7 @@ M.override = {
   },
   treesitter = {
 
-  }
-
+  },
 }
 
 ---@type HLTable

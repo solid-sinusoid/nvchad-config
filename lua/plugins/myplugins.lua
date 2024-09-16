@@ -13,13 +13,13 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-{
-    'numToStr/Comment.nvim',
+  {
+    "numToStr/Comment.nvim",
     opts = {
-        -- add any options here
+      -- add any options here
     },
     lazy = false,
-},
+  },
 
   -- override plugin configs
   {
@@ -104,7 +104,7 @@ local plugins = {
         request = "launch",
         name = "Python Launch File jmc=False",
         program = "${file}",
-        pythonPath = path
+        pythonPath = path,
       })
     end,
   },
@@ -132,16 +132,16 @@ local plugins = {
     dependencies = "nvim-telescope/telescope.nvim", -- optional
     opts = overrides.scissor,
   },
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
-    opts = {
-      hint_enable = false,
-    },
-    config = function(_, opts)
-      require("lsp_signature").setup(opts)
-    end,
-  },
+  -- {
+  --   "ray-x/lsp_signature.nvim",
+  --   event = "VeryLazy",
+  --   opts = {
+  --     hint_enable = false,
+  --   },
+  --   config = function(_, opts)
+  --     require("lsp_signature").setup(opts)
+  --   end,
+  -- },
   {
     "stevearc/overseer.nvim",
     event = "VeryLazy",
@@ -169,18 +169,6 @@ local plugins = {
       require("local-highlight").setup()
     end,
   },
-  {
-    "nvimdev/lspsaga.nvim",
-    event = "LspAttach",
-    config = function()
-      -- dofile(vim.g.base46_cache .. "lspsaga")
-      require("lspsaga").setup {}
-    end,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", -- optional
-      "nvim-tree/nvim-web-devicons", -- optional
-    },
-  }, --
   {
     "HiPhish/rainbow-delimiters.nvim",
     event = "VeryLazy",
@@ -230,9 +218,7 @@ local plugins = {
       -- treesitter = true,
     },
   },
-  {"sindrets/diffview.nvim",
-    event = "VeryLazy"
-  },
+  { "sindrets/diffview.nvim", event = "VeryLazy" },
 }
 
 return plugins

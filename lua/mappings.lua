@@ -44,7 +44,7 @@ map("n", "<leader>df", function()
 end, { desc = "DAP Float Element" })
 
 -- LazyGit mappings
-map("n", "<leader>gl", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "LazyGit" })
 map("n", "<leader>gf", "<cmd>LazyGitCurrentFile<CR>", { desc = "LazyGit Current File" })
 map("n", "<leader>gc", "<cmd>LazyGitFilter<CR>", { desc = "LazyGit Commits" })
 
@@ -62,13 +62,13 @@ map("n", "<leader>tu", "<cmd>OverseerToggle<CR>", { desc = "Overseer Toggle UI" 
 map("n", "<leader>tr", "<cmd>OverseerRun<CR>", { desc = "Overseer Run Task" })
 
 -- LSPSaga mappings
-map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { desc = "LSPSaga Outline" })
+map("n", "<leader>co", "<cmd>Lspsaga outline<CR>", { desc = "LSPSaga Outline" })
 map("n", "<leader>cf", "<cmd>Lspsaga finder<CR>", { desc = "LSPSaga Finder" })
-map("n", "<leader>lr", "<cmd>Lspsaga rename<CR>", { desc = "LSPSaga Rename" })
+map("n", "<leader>cr", "<cmd>Lspsaga rename<CR>", { desc = "LSPSaga Rename" })
 map("n", "K", "<cmd>Lspsaga hover_doc<CR>", { desc = "LSPSaga Hover Doc" })
-map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "LSPSaga Goto Definition" })
-map("n", "gtd", "<cmd>Lspsaga goto_type_definition<CR>", { desc = "LSPSaga Goto Type Definition" })
-map("n", "<leader>lf", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "LSPSaga Show Line Diagnostics" })
+-- map("n", "gd", "<cmd>Lspsaga goto_definition<CR>", { desc = "LSPSaga Goto Definition" })
+-- map("n", "gtd", "<cmd>Lspsaga goto_type_definition<CR>", { desc = "LSPSaga Goto Type Definition" })
+map("n", "<leader>cld", "<cmd>Lspsaga show_line_diagnostics<CR>", { desc = "LSPSaga Show Line Diagnostics" })
 
 
 -- Spectre mappings
