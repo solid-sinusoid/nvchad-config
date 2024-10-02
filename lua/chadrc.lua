@@ -5,8 +5,35 @@ local M = {}
 local highlights = require "highlights"
 
 M.base46 = {
-  theme = "paradice",
-  theme_toggle = { "paradice", "one_light" },
+  theme = "kanagawa",
+  theme_toggle = { "kanagawa", "one_light" },
+  changed_themes = {
+    tokyodark = {
+      polish_hl = {
+        treesitter = {
+          ["@type"] = { fg = "#7199ee", bold = true, italic = false },
+          ["@module"] = { fg = "#ee6d85", italic = true },
+          ["@punctuation.delimiter"] = {fg = "#7199ee"}
+        },
+      },
+    },
+    kanagawa = {
+      polish_hl = {
+        treesitter = {
+          ["@keyword.import"] = { fg = "#a48ec7" },
+          ["@uri"] = { fg = "#7FB4CA" },
+          ["@tag.delimiter"] = { fg = "#d8616b" },
+          ["@variable.member.key"] = { fg = "#DCD7BA" },
+          ["@punctuation.bracket"] = { fg = "#a48ec7" },
+          ["@punctuation.delimiter"] = { fg = "#DCD7BA" },
+          ["@module"] = { fg = "#d8616b", italic = true },
+          ["@type"] = { fg = "#dca561", bold = true, italic = false },
+        }
+      }
+    }
+  },
+
+
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -48,9 +75,7 @@ M.ui = {
     order = { "treeOffset", "buffers", "tabs", "btns" },
     modules = nil,
   },
-
 }
-
 
 M.nvdash = {
   load_on_startup = true,
