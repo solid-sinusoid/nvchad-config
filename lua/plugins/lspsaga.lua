@@ -9,7 +9,7 @@ return {
           enable = true,
         },
         ui = {
-          code_action = "󱐋",
+          code_action = "",
           border = "rounded",
         },
 

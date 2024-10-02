@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "highlights"
 
 M.base46 = {
-  theme = "onedark",
-  theme_toggle = { "onedark", "one_light" },
+  theme = "paradice",
+  theme_toggle = { "paradice", "one_light" },
 
   hl_override = highlights.override,
   hl_add = highlights.add,
@@ -73,7 +73,7 @@ M.nvdash = {
   --   { "  Themes", "Spc t h", "Telescope themes" },
   --   { "  Mappings", "Spc c h", "NvCheatsheet" },
   -- },
-},
+}
 
 M.mason = {
   command = true,
