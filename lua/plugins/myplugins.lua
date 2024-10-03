@@ -36,15 +36,6 @@ local plugins = {
     opts = overrides.nvimtree,
   },
 
-  -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
-
   {
     "stevearc/conform.nvim",
     --  for users those who want auto-save conform + lazyloading!
@@ -106,6 +97,19 @@ local plugins = {
         program = "${file}",
         pythonPath = path,
       })
+
+      -- table.insert(require("dap").configurations.python, {
+      --   justMyCode = false,
+      --   type = "python",
+      --   request = "attach",
+      --   name = "Python attach to debugpy 5678",
+      --   program = "${file}",
+      --   pythonPath = path,
+      --   connect = {
+      --     host = "localhost",
+      --     port = 5678
+      --   }
+      -- })
     end,
   },
   {
