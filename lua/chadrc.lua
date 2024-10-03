@@ -67,6 +67,9 @@ M.ui = {
     order = nil,
     modules = nil,
   },
+  cmp = {
+    style = "atom_colored"
+  },
 
   -- lazyload it when there are 1+ buffers
   tabufline = {

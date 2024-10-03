@@ -81,3 +81,9 @@ end, { desc = "Spectre Toggle" })
 -- Example of disabling a mapping
 -- nomap("i", "<C-k>")
 -- nomap("n", "<C-k>")
+
+
+-- Diffview
+map("n", "<leader>gdo", "<cmd>DiffviewOpen<cr>", {desc = "Diffview Open"})
+map("n", "<leader>gdc", "<cmd>DiffviewClose<cr>", {desc = "Diffview Close"})
+map("n", "<leader>gdf", "<cmd>DiffviewFileHistory<cr>", {desc = "Diffview File History"})
