@@ -41,7 +41,7 @@ M.nvimtree = {
   renderer = {
     highlight_git = true,
     icons = {
-    git_placement = "signcolumn",
+      git_placement = "signcolumn",
       show = {
         git = true,
       },

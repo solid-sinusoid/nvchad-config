@@ -23,6 +23,26 @@ autocmd("VimLeavePre", {
   command = ":silent !kitty @ set-spacing padding=20 margin=10",
 })
 
+local function clear_cmdarea()
+  vim.defer_fn(function()
+    vim.api.nvim_echo({}, false, {})
+  end, 800)
+end
+
+autocmd({ "InsertLeave", "TextChanged" }, {
+  callback = function()
+    if #vim.api.nvim_buf_get_name(0) ~= 0 and vim.bo.buflisted then
+      vim.cmd "silent w"
+
+      -- local time = os.date "%I:%M %p" --
+      -- -- print nice colored msg
+      -- vim.api.nvim_echo({ { "󰄳", "LazyProgressDone" }, { " file autosaved at " .. time } }, false, {})
+
+      clear_cmdarea()
+    end
+  end,
+})
+
 autocmd("BufReadPost", {
     group = augroup("LastPlace", {}),
     pattern = { "*" },
